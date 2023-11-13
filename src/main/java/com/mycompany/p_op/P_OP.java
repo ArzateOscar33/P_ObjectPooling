@@ -11,7 +11,8 @@ package com.mycompany.p_op;
 public class P_OP {
 
     public static void main(String[] args) { // Obtiene una instancia del ObjectPool para objetos de tipo Conexion
-       BalaPool balaPool = new BalaPool();
+        
+        BalaPool balaPool = new BalaPool();
         BalaEspecialPool balaEspecialPool = new BalaEspecialPool();
 
         // Simulación de disparo de balas

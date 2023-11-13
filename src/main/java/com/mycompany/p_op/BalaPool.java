@@ -27,7 +27,7 @@ class BalaPool implements CustomObjectPool<Bala> {
         //preguntamos si la lista esta vacia 
         if (availableBalas.isEmpty()) {
             // Si no hay balas disponibles, crea una nueva bala con su velocidad 
-            Bala newBala = new Bala(10);
+            Bala newBala = new Bala(50);
             //la agregamos a la lista de balas en uso 
             inUseBalas.add(newBala);
             //retornamos una nueva bala 
@@ -45,6 +45,7 @@ class BalaPool implements CustomObjectPool<Bala> {
     public void releaseObject(Bala bala) {
         //si se borra una bala de la lista de balas en uso esta misma bala se agrega a la lista de balas disponibles 
         if (inUseBalas.remove(bala)) {
+            System.out.println("Bala regresa al Pool ");
             availableBalas.add(bala);
         }
     }
